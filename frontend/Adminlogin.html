@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E-Library Management System Admin Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>E-Library Management System</h1>
+        <nav>
+            <a href="login.html">User Login</a>
+            <a href="signup.html">User Signup</a>
+            <a href="Adminsignup.html">Admin Signup</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="left-section">
+            <h3>Today's Quote</h3>
+            <p>"There is more treasure in books than in all the pirate's loot on Treasure Island"<br>~ Walt Disney</p>
+
+            <h3>Library Timing</h3>
+            <p>Opening: 9:00 AM<br>Closing: 12:00 PM</p>
+
+            <h3>What We Provide?</h3>
+            <ul>
+                <li>AC Rooms</li>
+                <li>Free Wi-Fi</li>
+                <li>Learning Environment</li>
+                <li>Discussion Room</li>
+                <li>Free Electricity</li>
+            </ul>
+        </div>
+
+        <div class="right-section">
+            <h2>Admin Login Form</h2>
+            <form id="Alogin-form">
+                <div class="form-group">
+                    <label for="email">Email ID:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group password-container">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <!-- Eye icon for password visibility toggle -->
+                    <span id="togglePassword" class="eye-icon">👁️</span>
+                </div>
+                <div class="form-actions">
+                    <button type="submit">Login</button>
+                    <p>Don't have an account? <a href="Adminsignup.html">Signup Now!</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="JS/Adminlogin.js"></script>
+</body>
+</html>

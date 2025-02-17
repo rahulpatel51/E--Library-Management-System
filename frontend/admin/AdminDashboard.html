@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Library Admin Dashboard</title>
+    <link rel="stylesheet" href="css/AdminDashboard.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-image: url("../img/bak.jpeg");
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .content {
+            flex-grow: 1;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: auto;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 0rem;
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-success {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .dropdown-menu.show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="AdminDashboard.html">E-Library Management System (E-LMS)</a>
+            <span class="navbar-text text-white">
+                <strong>Welcome: <span id="admin-name"></span></strong> |
+                <strong>Email: <span id="admin-email"></span></strong>
+            </span>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        My Profile
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="view_profile.html">View Profile</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="EditProfile.html">Edit Profile</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Adminlogin.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Navigation Bar -->
+    <nav class="sub-navbar">
+        <ul>
+            <li><a href="AdminDashboard.html">Dashboard</a></li>
+            <li class="dropdown">
+                <a href="#">Books</a>
+                <div class="dropdown-content">
+                    <a href="AddBook.html">Add New Book</a>
+                    <a href="ManageBook.html">Manage Books</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Category</a>
+                <div class="dropdown-content">
+                    <a href="AddCategory.html">Add New Category</a>
+                    <a href="ManageCategory.html">Manage Category</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Authors</a>
+                <div class="dropdown-content">
+                    <a href="AddAuthor.html">Add New Author</a>
+                    <a href="ManageAuthors.html">Manage Author</a>
+                </div>
+            </li>
+            <li><a href="IssueBook.html">Issue Book</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Cards Section -->
+        <div class="cards-container">
+            <!-- Registered Users Card -->
+            <div class="card">
+                <div class="card-header">Registered Users</div>
+                <div class="card-body">
+                    <p>No. of total Users: <span id="userCount">0</span></p>
+                    <a class="btn btn-success" href="ViewRegisteredUser.html" target="_blank">View Registered Users</a>
+                </div>
+            </div>
+
+            <!-- Total Books Card -->
+            <div class="card">
+                <div class="card-header">Total Books</div>
+                <div class="card-body">
+                    <p>No. of books available: <span id="bookCount">0</span></p>
+                    <a class="btn btn-success" href="ViewAllBook.html" target="_blank">View All Books</a>
+                </div>
+            </div>
+
+            <!-- Book Categories Card -->
+            <div class="card">
+                <div class="card-header">Book Categories</div>
+                <div class="card-body">
+                    <p>No. of Book's Categories: <span id="categoryCount">0</span></p>
+                    <a class="btn btn-success" href="ViewCategories.html" target="_blank">View Categories</a>
+                </div>
+            </div>
+
+            <!-- Authors Card -->
+            <div class="card">
+                <div class="card-header">No. of Authors</div>
+                <div class="card-body">
+                    <p>No. of Authors: <span id="authorCount">0</span></p>
+                    <a class="btn btn-success" href="ViewAuthors.html" target="_blank">View Authors</a>
+                </div>
+            </div>
+
+            <!-- Books Issued Card -->
+            <div class="card">
+                <div class="card-header">Books Issued</div>
+                <div class="card-body">
+                    <p>No. of books issued: <span id="issuedBookCount">0</span></p>
+                    <a class="btn btn-success" href="ViewIssuedBook.html" target="_blank">View Issued Books</a>
+                </div>
+            </div>
+
+            <!-- Feedback Card -->
+            <div class="card">
+                <div class="card-header">Feedback</div>
+                <div class="card-body">
+                    <p>Total Feedbacks: <span id="feedbackCount">0</span></p>
+                    <a class="btn btn-success" href="ViewAllFeedBack.html" target="_blank">View Feedback</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 E-Library Management System. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="js/AdminDashBoard.js"></script>
+</body>
+
+</html>

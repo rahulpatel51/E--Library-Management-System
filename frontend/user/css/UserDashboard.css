@@ -1,0 +1,226 @@
+/* General Body Style */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgba(245, 245, 245, 0.4);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+}
+
+/* Navbar Style */
+.navbar {
+    background-color: #343a40;
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+}
+
+.navbar-text {
+    font-size: 1em;
+    /* Center align user info */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Make the navbar-text take full width */
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Dropdown menu hover */
+.dropdown-menu a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Container Styles */
+.container {
+    margin-top: 20px;
+}
+
+/* Profile Info Styles */
+.profile-info input {
+    border: none;
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin: 5px 0;
+    width: 100%;
+}
+
+.profile-info label {
+    font-weight: bold;
+}
+
+.profile-header {
+    margin-bottom: 20px;
+    margin-top: 30px; /* Space between header and other sections */
+}
+
+
+
+/* Ensure the dropdown is hidden initially */
+.dropdown-menu {
+    display: none;
+}
+
+/* When the dropdown is open, show the menu */
+.dropdown.open .dropdown-menu {
+    display: block;
+}
+
+
+
+
+/* Marquee Style */
+marquee {
+    color: #58f1f1;
+    font-weight: bold;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+/* Card Styles */
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    height: auto; /* Allow card to auto adjust its height */
+    min-height: 250px; /* Set a minimum height */
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #f8f9fa;
+    transition: transform 0.3s ease;
+}
+
+.card-header {
+    background-color: #007adf;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-body p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.card-body .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Feedback Form Styles */
+#feedbackForm input,
+#feedbackForm textarea {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+}
+
+#feedbackForm button {
+    background-color: #007adf;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+#feedbackForm button:hover {
+    background-color: #005bb5;
+}
+
+#feedbackMessage {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-text {
+        margin-top: 10px;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+}
+
+/* Footer Styles */
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+p {
+    margin-bottom: 0;
+} 
+
+
+
+@media (min-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+        display: flex;
+    }
+}

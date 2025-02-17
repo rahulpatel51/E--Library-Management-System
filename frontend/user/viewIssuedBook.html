@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Library Issued Books</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/UserDashboard.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure body takes up full height */
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            flex: 1;
+            margin-top: 30px; /* Adjusted margin-top for better spacing */
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            margin-top: -40px; 
+        }
+
+        table {
+            width: 100%;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: auto; /* Push footer to the bottom */
+        }
+
+        /* Marquee styling */
+        marquee {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="UserDashboard.html">E-Library Management System (E-LMS)</a>
+        <span class="navbar-text text-white">
+            <strong>Welcome: <span id="userName">Loading...</span></strong> |
+            <strong>Email: <span id="userEmail">Loading...</span></strong>
+        </span>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <!-- Dropdown Button with `dropbtn` class for JS interaction -->
+                <a class="nav-link dropdown-toggle dropbtn" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    My Profile
+                </a>
+                <!-- Dropdown Menu -->
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="viewProfile.html">View Profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="EditProfile.html">Edit Profile</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../login.html">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+    <!-- Marquee -->
+    <span><marquee>This is a library management system. Library opens at 8:00 AM and closes at 8:00 PM</marquee></span><br><br>
+
+    <!-- Profile Section -->
+    <header>
+        <h1>E-Library Management System</h1>
+        <h2>Issued Book's Details</h2>
+    </header>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Book Name</th>
+                            <th>Issue Date </th>
+                            <th>Return Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookList">
+                        <!-- Dynamically populated book details go here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 E-Library Management System. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="js/ViewIssuedBook.js"></script>
+    <script src="js/UserDashBoard.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Library Management System - Issue Book</title>
+    <link rel="stylesheet" href="css/AdminDashboard.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .submit-btn {
+            background-color: #34495e;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #2c3e50;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.2rem;
+            color: #34495e;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 0rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="AdminDashboard.html">E-Library Management System (E-LMS)</a>
+            <span class="navbar-text text-white">
+                <strong>Welcome: <span id="admin-name"></span></strong> |
+                <strong>Email: <span id="admin-email"></span></strong>
+            </span>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        My Profile
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="view_profile.html">View Profile</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="EditProfile.html">Edit Profile</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Adminlogin.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Navigation Bar -->
+    <nav class="sub-navbar">
+        <ul>
+            <li><a href="AdminDashboard.html">Dashboard</a></li>
+            <li class="dropdown">
+                <a href="#">Books</a>
+                <div class="dropdown-content">
+                    <a href="AddBook.html">Add New Book</a>
+                    <a href="ManageBook.html">Manage Books</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Category</a>
+                <div class="dropdown-content">
+                    <a href="AddCategory.html">Add New Category</a>
+                    <a href="ManageCategory.html">Manage Category</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Authors</a>
+                <div class="dropdown-content">
+                    <a href="AddAuthor.html">Add New Author</a>
+                    <a href="ManageAuthors.html">Manage Author</a>
+                </div>
+            </li>
+            <li><a href="IssueBook.html">Issue Book</a></li>
+        </ul>
+    </nav>
+
+    <!-- Issue Book Section -->
+    <header>
+        <h1>E-Library Management System</h1>
+        <h2>Issue Book</h2>
+    </header>
+
+    <div class="container">
+        <div id="loading" class="loading"></div>
+        <form id="issueBookForm">
+            <div class="form-group">
+                <label for="studentId">Student ID</label>
+                <input type="text" id="studentId" class="form-control" placeholder="Enter Student's ID" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="studentName">Student Name</label>
+                <input type="text" id="studentName" class="form-control" placeholder="Student Name" disabled>
+            </div>
+            
+            <div class="form-group">
+                <label for="bookTitle">Book Title</label>
+                <select id="bookTitle" class="form-control" required>
+                    <option value="">Select a Book</option>
+                    <!-- Book options will be added dynamically here -->
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="issueDate">Issue Date</label>
+                <input type="date" id="issueDate" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="returnDate">Return Date</label>
+                <input type="date" id="returnDate" class="form-control" required>
+            </div>
+            
+            <button type="submit" class="submit-btn">Issue Book</button>
+        </form>
+    </div>
+    
+
+    <footer>
+        <p>&copy; 2024 E-Library Management System. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+   <script src="js/IssueBook.js"></script>
+   <script src="js/AdminDashBoard.js"></script>
+
+ 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const loadingDiv = document.getElementById('loading');
+        const issueBookForm = document.getElementById('issueBookForm');
+
+        // Simulating data load with a delay
+        setTimeout(() => {
+            if (loadingDiv && issueBookForm) {
+                // Hide loading div and show the form
+                loadingDiv.style.display = 'none';
+                issueBookForm.style.display = 'block';
+            } else {
+                console.error('Loading div or form not found.');
+            }
+        }, 1000); // 1 second delay
+    });
+</script>
+</body>
+</html>

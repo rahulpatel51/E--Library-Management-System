@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Library Management System - View All Feedback</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/AdminDashboard.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: auto;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1600px; /* Increased max width */
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #34495e;
+            color: white;
+        }
+
+        td {
+            vertical-align: top; /* Ensures proper alignment of multi-line text */
+        }
+
+        /* Adjust column widths */
+        th:nth-child(1), td:nth-child(1) {
+            width: 10%; /* Student ID */
+        }
+
+        th:nth-child(2), td:nth-child(2) {
+            width: 15%; /* Student Name */
+        }
+
+        th:nth-child(3), td:nth-child(3) {
+            width: 50%; /* Message - takes majority space */
+            word-wrap: break-word; /* Ensures text wraps within the cell */
+            word-break: break-word;
+        }
+
+        th:nth-child(4), td:nth-child(4),
+        th:nth-child(5), td:nth-child(5) {
+            width: 12%; /* Date and Time */
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="AdminDashboard.html">E-Library Management System (E-LMS)</a>
+            <span class="navbar-text text-white">
+                <strong>Welcome: <span id="admin-name"></span></strong> |
+                <strong>Email: <span id="admin-email"></span></strong>
+            </span>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        My Profile
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="view_profile.html">View Profile</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="EditProfile.html">Edit Profile</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../Adminlogin.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Navigation Bar -->
+    <nav class="sub-navbar">
+        <ul>
+            <li><a href="AdminDashboard.html">Dashboard</a></li>
+            <li class="dropdown">
+                <a href="#">Books</a>
+                <div class="dropdown-content">
+                    <a href="AddBook.html">Add New Book</a>
+                    <a href="ManageBook.html">Manage Books</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Category</a>
+                <div class="dropdown-content">
+                    <a href="AddCategory.html">Add New Category</a>
+                    <a href="ManageCategory.html">Manage Category</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Authors</a>
+                <div class="dropdown-content">
+                    <a href="AddAuthor.html">Add New Author</a>
+                    <a href="ManageAuthors.html">Manage Author</a>
+                </div>
+            </li>
+            <li><a href="IssueBook.html">Issue Book</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>E-Library Management System</h1>
+        <h2>View All Feedback</h2>
+    </header>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Message</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody id="feedbackBody">
+                <!-- Feedback data will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 E-Library Management System. All Rights Reserved.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="js/ViewAllFeedBack.js"></script>
+    <script src="js/AdminDashBoard.js"></script>
+</body>
+</html>
