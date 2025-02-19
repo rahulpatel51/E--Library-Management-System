@@ -23,3 +23,23 @@ Welcome to the **E-Library Management System**! This project is designed to prov
 ## 📂 Folder Structure
 
 E-Library/ ├── backend/ # Backend code (Node.js, Express, MongoDB) │ ├── controllers/ # Business logic for API routes │ ├── models/ # Mongoose models (Book, User) │ ├── routes/ # API routes for authentication, books, etc. │ ├── middleware/ # Middleware (Authentication checks) │ ├── server.js # Entry point for the backend server ├── frontend/ # Frontend code (HTML, CSS, JavaScript) │ ├── index.html # Main homepage │ ├── login.html # User login page │ ├── register.html # User registration page │ ├── dashboard.html # User dashboard (books, borrow, etc.) │ ├── css/ # Styles for the frontend │ ├── js/ # JavaScript logic for frontend functionality └── README.md # Project documentation
+
+
+
+---
+
+## 🔧 Installation & Setup  
+
+### **Step 1: Clone the Repository**  
+```bash
+git clone https://github.com/yourusername/E-Library-Management-System.git
+cd E-Library-Management-System
+
+cd backend
+npm install  # Install backend dependencies
+
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+
+npm start
+
